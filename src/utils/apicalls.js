@@ -10,4 +10,8 @@ function addNewBookmark(email, movie){
         movie}).then(result => result.data);
 }
 
-export { getAllMovies, addNewBookmark }
+function getSingleMovie(idmovie) {
+    return API.get('/movies/'+idmovie).then(res => res.data);
+}
+
+export { getAllMovies, addNewBookmark, getSingleMovie }
