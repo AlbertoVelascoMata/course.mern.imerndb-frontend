@@ -6,7 +6,7 @@ import { AiFillEye, AiFillSignal, AiFillAppstore, AiTwotoneCalendar, AiOutlineSt
 
 import { addNewBookmark } from "../../utils/apicalls.js";
 
-export default function CardMovie({ movie }){
+export default function MovieCard({ movie }){
 
   const navigate = useNavigate();
 

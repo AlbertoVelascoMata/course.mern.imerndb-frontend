@@ -26,7 +26,10 @@ export default function Header(){
               <Link to="/home" style={{ textDecoration: 'none' }}><NavLink><span className="text-white" border="0">All movies </span></NavLink></Link>
             </NavItem>
             <NavItem>
-            <Link to="/home/bookmarks" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">My Bookmarks</span></NavLink></Link>
+            <Link to="/home/watchlist" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Watchlist</span></NavLink></Link>
+            </NavItem>
+            <NavItem>
+            <Link to="/home/watched" style={{ textDecoration: 'none' }}><NavLink><span className="text-white">Watched</span></NavLink></Link>
             </NavItem>
           </Nav>
           <NavbarText>

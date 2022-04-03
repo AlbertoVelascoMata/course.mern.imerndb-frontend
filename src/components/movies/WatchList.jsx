@@ -9,7 +9,7 @@ import { getDateInStrFormat } from "../../utils/utils.js";
 
 import Header from '../Header.jsx';
 
-export default function MyMovieList(){
+export default function WatchList() {
 
     const [bookmarks, setBookmarks] = useState(null);
   
