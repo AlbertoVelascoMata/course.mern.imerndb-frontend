@@ -22,7 +22,23 @@ function deleteBookmark(idbookmark) {
     return API.delete('/bookmarks/'+idbookmark).then(result => result.data);
 }
 
+function getWatchedMovies(email) {
+    return API.get('/watched/' + email)
+        .then(res => res.data);
+}
+
+function markAsWatched(email, movie) {
+    return API.post('/watched', {email, movie})
+        .then(result => result.data)
+}
+
+function markAsUnwatched(watched_id) {
+    return API.delete('/watched/' + watched_id)
+        .then(result => result.data);
+}
+
 export {
     getAllMovies, getSingleMovie,
-    addNewBookmark, getMyBookmarks, deleteBookmark
+    addNewBookmark, getMyBookmarks, deleteBookmark,
+    getWatchedMovies, markAsWatched, markAsUnwatched
 }
