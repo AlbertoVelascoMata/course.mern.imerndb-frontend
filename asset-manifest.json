@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mernflix-frontend/static/css/main.af5b8f10.css",
-    "main.js": "/mernflix-frontend/static/js/main.8b81c0d1.js",
-    "static/js/787.a327264f.chunk.js": "/mernflix-frontend/static/js/787.a327264f.chunk.js",
-    "static/media/background_mernflixdark.png": "/mernflix-frontend/static/media/background_mernflixdark.49b205c1b7af85da78d1.png",
-    "index.html": "/mernflix-frontend/index.html",
-    "main.af5b8f10.css.map": "/mernflix-frontend/static/css/main.af5b8f10.css.map",
-    "main.8b81c0d1.js.map": "/mernflix-frontend/static/js/main.8b81c0d1.js.map",
-    "787.a327264f.chunk.js.map": "/mernflix-frontend/static/js/787.a327264f.chunk.js.map"
+    "main.css": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/css/main.08885c06.css",
+    "main.js": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/js/main.edb3e397.js",
+    "static/js/787.6dc79007.chunk.js": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js",
+    "static/media/background_mernflixdark.png": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/media/background_mernflixdark.49b205c1b7af85da78d1.png",
+    "index.html": "/AlbertoVelascoMata/course.mern.imerndb-frontend/index.html",
+    "main.08885c06.css.map": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/css/main.08885c06.css.map",
+    "main.edb3e397.js.map": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/js/main.edb3e397.js.map",
+    "787.6dc79007.chunk.js.map": "/AlbertoVelascoMata/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af5b8f10.css",
-    "static/js/main.8b81c0d1.js"
+    "static/css/main.08885c06.css",
+    "static/js/main.edb3e397.js"
   ]
 }
