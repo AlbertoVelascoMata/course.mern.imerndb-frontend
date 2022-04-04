@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/course.mern.imerndb-frontend/static/css/main.08885c06.css",
-    "main.js": "/course.mern.imerndb-frontend/static/js/main.1bfc94df.js",
+    "main.js": "/course.mern.imerndb-frontend/static/js/main.aae6e825.js",
     "static/js/787.6dc79007.chunk.js": "/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js",
     "static/media/background_imerndbdark.png": "/course.mern.imerndb-frontend/static/media/background_imerndbdark.15e4cba7207947657656.png",
     "index.html": "/course.mern.imerndb-frontend/index.html",
     "main.08885c06.css.map": "/course.mern.imerndb-frontend/static/css/main.08885c06.css.map",
-    "main.1bfc94df.js.map": "/course.mern.imerndb-frontend/static/js/main.1bfc94df.js.map",
+    "main.aae6e825.js.map": "/course.mern.imerndb-frontend/static/js/main.aae6e825.js.map",
     "787.6dc79007.chunk.js.map": "/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08885c06.css",
-    "static/js/main.1bfc94df.js"
+    "static/js/main.aae6e825.js"
   ]
 }
