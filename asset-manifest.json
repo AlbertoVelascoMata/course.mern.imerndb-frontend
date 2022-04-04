@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/course.mern.imerndb-frontend/static/css/main.08885c06.css",
-    "main.js": "/course.mern.imerndb-frontend/static/js/main.922ec532.js",
+    "main.js": "/course.mern.imerndb-frontend/static/js/main.1bfc94df.js",
     "static/js/787.6dc79007.chunk.js": "/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js",
-    "static/media/background_mernflixdark.png": "/course.mern.imerndb-frontend/static/media/background_mernflixdark.49b205c1b7af85da78d1.png",
+    "static/media/background_imerndbdark.png": "/course.mern.imerndb-frontend/static/media/background_imerndbdark.15e4cba7207947657656.png",
     "index.html": "/course.mern.imerndb-frontend/index.html",
     "main.08885c06.css.map": "/course.mern.imerndb-frontend/static/css/main.08885c06.css.map",
-    "main.922ec532.js.map": "/course.mern.imerndb-frontend/static/js/main.922ec532.js.map",
+    "main.1bfc94df.js.map": "/course.mern.imerndb-frontend/static/js/main.1bfc94df.js.map",
     "787.6dc79007.chunk.js.map": "/course.mern.imerndb-frontend/static/js/787.6dc79007.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08885c06.css",
-    "static/js/main.922ec532.js"
+    "static/js/main.1bfc94df.js"
   ]
 }
