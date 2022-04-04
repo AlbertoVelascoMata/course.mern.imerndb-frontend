@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Media, Button } from 'reactstrap';
 import { AiFillEye, AiFillSignal, AiFillAppstore, AiTwotoneCalendar, AiOutlineStar } from "react-icons/ai";
 
-import { addNewBookmark } from "../../utils/apicalls.js";
+import { addNewBookmark, deleteBookmark, markAsUnwatched, markAsWatched } from "../../utils/apicalls.js";
 
 export default function MovieCard({ movie }){
-
   const navigate = useNavigate();
 
-  const addBookmark = () => {
-    //Save bookmark in database with the api call
+  const [bookmarkId, setBookmarkId] = useState(movie.bookmark_id);
+  const [watchedId, setWatchedId] = useState(movie.watched_id);
+
+  const addToWatchlist = () => {
     addNewBookmark(sessionStorage.getItem('email'), movie)
-      .then((res) => navigate('/home/bookmarks'));
+      .then((res) => setBookmarkId(res._id));
   }
 
-  return(
+  const removeFromWatchList = () => {
+    deleteBookmark(bookmarkId)
+      .then(() => setBookmarkId(null));
+  }
+
+  const addToWatched = () => {
+    markAsWatched(sessionStorage.getItem('email'), movie)
+      .then((res) => setWatchedId(res._id));
+  }
+
+  const removeFromWatched = () => {
+    markAsUnwatched(watchedId)
+      .then(() => setWatchedId(null));
+  }
+
+  return (
     <div className="card" style={{ width: '18rem', backgroundColor: 'black' }}>
       <div className="card-body">
         <h6 className="text-white">{movie.title}</h6>
@@ -33,8 +49,17 @@ export default function MovieCard({ movie }){
         </p> 
         <table cellPadding="3">
           <tr>
-            <td><Link to={`/home/details/${movie._id}`}><Button color="danger"><AiFillEye/> Watch</Button></Link></td>
-            <td><Button color="warning" onClick={addBookmark}><AiOutlineStar/> Add</Button></td>                
+            <td><Link to={`/home/details/${movie._id}`}><Button color="danger"><AiFillEye/> Details</Button></Link></td>
+            <td>{bookmarkId !== null ? (
+              <Button color="info" onClick={removeFromWatchList}>In Watchlist</Button>
+            ) : (
+              <Button color="warning" onClick={addToWatchlist}><AiOutlineStar/> Add to Watchlist</Button>
+            )}</td>
+            <td>{watchedId !== null ? (
+              <Button color="info" onClick={removeFromWatched}>Unwatch</Button>
+            ) : (
+              <Button color="warning" onClick={addToWatched}><AiOutlineStar/> Mark as watched</Button>
+            )}</td>               
           </tr>
         </table>
       </div>
