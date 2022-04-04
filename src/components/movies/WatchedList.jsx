@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Row, Col, Container, Badge, CardTitle, Table, Button, Media } from 'reactstrap';
-import { AiFillEye, AiOutlineDelete } from "react-icons/ai";
+import { AiFillInfoCircle, AiOutlineDelete } from "react-icons/ai";
 
 import { getWatchedMovies, markAsUnwatched } from "../../utils/apicalls.js";
 import { getDateInStrFormat } from "../../utils/utils.js";
@@ -42,7 +42,7 @@ export default function WatchedList() {
           </Col>
         </Row> 
         <Container>
-          <CardTitle tag="center"><Badge pill color="dark">Found {watchedMovies.length} watched movies</Badge></CardTitle>
+          <CardTitle tag="center"><Badge pill color="dark">{watchedMovies.length} watched movies</Badge></CardTitle>
             <Table dark>
               <tbody>
               {watchedMovies.map((watched_movie) => {
@@ -64,7 +64,7 @@ export default function WatchedList() {
                             <Col xs="2">
                               <table cellPadding="3">
                                 <tr>
-                                  <td><Link to={`/home/details/${watched_movie.movie._id}`}><Button color="danger"><AiFillEye/> Watch</Button></Link></td>
+                                  <td><Link to={`/details/${watched_movie.movie._id}`}><Button color="danger"><AiFillInfoCircle/> Details</Button></Link></td>
                                   <td><Button color="secondary" onClick={() => deleteWatchedMovie(watched_movie)}><AiOutlineDelete/> Remove</Button></td>                
                                 </tr>
                               </table>

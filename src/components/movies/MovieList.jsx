@@ -17,18 +17,27 @@ export default function MovieList(){
         return dict;
       }, {});
 
-      getMyBookmarks(sessionStorage.getItem('email')).then((bookmarks) => {
-        bookmarks.map((bookmark) => {
-          moviesDict[bookmark.movie._id].bookmark_id = bookmark._id;
-        });
+      let user_email = sessionStorage.getItem('email');
+      if(user_email === null) {
+        // Users not logged can only see the movies list
+        setMovies(Object.values(moviesDict));
 
-        getWatchedMovies(sessionStorage.getItem('email')).then((watchedMovies) => {
-          watchedMovies.map((watchedMovie) => {
-            moviesDict[watchedMovie.movie._id].watched_id = watchedMovie._id;
+      } else {
+        // Update those movies already added to the Watchlist
+        getMyBookmarks(user_email).then((bookmarks) => {
+          bookmarks.map((bookmark) => {
+            moviesDict[bookmark.movie._id].bookmark_id = bookmark._id;
           });
-          setMovies(Object.values(moviesDict));
+          
+          // Update those movies already marked as watched
+          getWatchedMovies(user_email).then((watchedMovies) => {
+            watchedMovies.map((watchedMovie) => {
+              moviesDict[watchedMovie.movie._id].watched_id = watchedMovie._id;
+            });
+            setMovies(Object.values(moviesDict));
+          });
         });
-      });
+      }
     });
   }, []);
  

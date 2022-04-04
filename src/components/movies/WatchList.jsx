@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Row, Col, Container, Badge, CardTitle, Table, Button, Media } from 'reactstrap';
-import { AiFillEye, AiOutlineDelete } from "react-icons/ai";
+import { AiFillInfoCircle, AiOutlineDelete } from "react-icons/ai";
 
 import { getMyBookmarks, deleteBookmark } from "../../utils/apicalls.js";
 import { getDateInStrFormat } from "../../utils/utils.js";
@@ -46,7 +46,7 @@ export default function WatchList() {
           </Col>
         </Row> 
         <Container>
-          <CardTitle tag="center"><Badge pill color="dark">Total bookmarks found: {bookmarks.length}</Badge></CardTitle>
+          <CardTitle tag="center"><Badge pill color="dark">{bookmarks.length} bookmarks</Badge></CardTitle>
             <Table dark>
               <tbody>
               {bookmarks.map((bookmark) => {
@@ -68,7 +68,7 @@ export default function WatchList() {
                             <Col xs="2">
                               <table cellPadding="3">
                                 <tr>
-                                  <td><Link to={`/home/details/${bookmark.movie._id}`}><Button color="danger"><AiFillEye/> Watch</Button></Link></td>
+                                  <td><Link to={`/details/${bookmark.movie._id}`}><Button color="danger"><AiFillInfoCircle/> Details</Button></Link></td>
                                   <td><Button color="secondary" onClick={() => deleteSelBookmark(bookmark)}><AiOutlineDelete/> Remove</Button></td>                
                                 </tr>
                               </table>

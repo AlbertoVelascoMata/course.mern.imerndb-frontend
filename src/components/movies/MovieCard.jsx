@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Media, Button } from 'reactstrap';
-import { AiFillEye, AiFillSignal, AiFillAppstore, AiTwotoneCalendar, AiOutlineStar } from "react-icons/ai";
+import { AiFillInfoCircle, AiFillEye, AiFillEyeInvisible, AiFillSignal, AiFillAppstore, AiTwotoneCalendar } from "react-icons/ai";
+import {BiAddToQueue} from 'react-icons/bi';
+import {IoIosRemoveCircle} from 'react-icons/io';
 
 import { addNewBookmark, deleteBookmark, markAsUnwatched, markAsWatched } from "../../utils/apicalls.js";
 
@@ -13,8 +15,10 @@ export default function MovieCard({ movie }){
   const [watchedId, setWatchedId] = useState(movie.watched_id);
 
   const addToWatchlist = () => {
-    addNewBookmark(sessionStorage.getItem('email'), movie)
-      .then((res) => setBookmarkId(res._id));
+    let user_email = sessionStorage.getItem('email');
+    if(user_email === null) navigate("/login");
+    else addNewBookmark(user_email, movie)
+          .then((res) => setBookmarkId(res._id));
   }
 
   const removeFromWatchList = () => {
@@ -23,8 +27,10 @@ export default function MovieCard({ movie }){
   }
 
   const addToWatched = () => {
-    markAsWatched(sessionStorage.getItem('email'), movie)
-      .then((res) => setWatchedId(res._id));
+    let user_email = sessionStorage.getItem('email');
+    if(user_email === null) navigate("/login");
+    else markAsWatched(user_email, movie)
+          .then((res) => setWatchedId(res._id));
   }
 
   const removeFromWatched = () => {
@@ -49,16 +55,16 @@ export default function MovieCard({ movie }){
         </p> 
         <table cellPadding="3">
           <tr>
-            <td><Link to={`/home/details/${movie._id}`}><Button color="danger"><AiFillEye/> Details</Button></Link></td>
+            <td><Link to={`/details/${movie._id}`}><Button color="danger"><AiFillInfoCircle/> Details</Button></Link></td>
             <td>{bookmarkId !== null ? (
-              <Button color="info" onClick={removeFromWatchList}>In Watchlist</Button>
+              <Button color="success" onClick={removeFromWatchList}><IoIosRemoveCircle/> In Watchlist</Button>
             ) : (
-              <Button color="warning" onClick={addToWatchlist}><AiOutlineStar/> Add to Watchlist</Button>
+              <Button color="warning" onClick={addToWatchlist}><BiAddToQueue/> Bookmark</Button>
             )}</td>
             <td>{watchedId !== null ? (
-              <Button color="info" onClick={removeFromWatched}>Unwatch</Button>
+              <Button color="info" onClick={removeFromWatched}><AiFillEyeInvisible/> Unwatch</Button>
             ) : (
-              <Button color="warning" onClick={addToWatched}><AiOutlineStar/> Mark as watched</Button>
+              <Button color="primary" onClick={addToWatched}><AiFillEye/> Mark watched</Button>
             )}</td>               
           </tr>
         </table>
