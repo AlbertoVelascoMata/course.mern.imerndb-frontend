@@ -39,7 +39,7 @@ export default function ShowMovie(){
       <Col xs ="12" >
         <div className="card-body">
           <h4 className="text-white">{movie.title} </h4>
-          <Link to={`/home`}><Button color="danger"><AiOutlineArrowLeft/> Back</Button></Link>
+          <Link to={`/`}><Button color="danger"><AiOutlineArrowLeft/> Back</Button></Link>
           <p className="text-white"><AiFillAppstore/> Category: 
             {movie.category.map((cat) => {
               return (<span className="text-white"> {cat} </span>);
